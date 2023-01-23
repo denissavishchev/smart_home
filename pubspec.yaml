@@ -76,9 +76,17 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+   - family: derelict
+     fonts:
+       - asset: assets/fonts/derelict.otf
+         style: italic
    - family: Orbitron
      fonts:
        - asset: assets/fonts/Orbitron.ttf
+         style: italic
+   - family: good
+     fonts:
+       - asset: assets/fonts/good.otf
          style: italic
   #   - family: Trajan Pro
   #     fonts:

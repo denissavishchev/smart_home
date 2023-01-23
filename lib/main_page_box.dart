@@ -9,7 +9,7 @@ class MainPageBox extends CustomPainter {
     var paintFrame = Paint()
       ..color = Colors.white.withOpacity(0.4)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0
+      ..strokeWidth = 3.0
       ..isAntiAlias = true;
 
     var pathFrame = Path()
