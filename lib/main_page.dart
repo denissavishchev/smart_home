@@ -1,12 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home/circle_box.dart';
 import 'package:smart_home/constants.dart';
 import 'package:smart_home/gradient_text.dart';
 
 import 'main_page_box.dart';
 
-class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
+class MainPage extends StatefulWidget {
 
+
+  MainPage({Key? key}) : super(key: key);
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+
+  double value1 = 0;
+
+  String percentageModifier(double value) {
+    final roundedValue = value.ceil().toInt().toString();
+    print('$roundedValue %');
+    setState(() {
+      value1 = double.parse(roundedValue);
+    });
+    return '$roundedValue %';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +136,7 @@ class MainPage extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 10,),
                                     Text('STATISTICS', style: TextStyle(
-                                        fontSize: 16,
+                                        fontSize: 14,
                                         fontFamily: 'good',
                                         color: Colors.white.withOpacity(0.6),
                                         fontWeight: FontWeight.bold),)
@@ -125,14 +144,15 @@ class MainPage extends StatelessWidget {
                                 ),
                                 Column(
                                   children: [
-                                    const Text('36 %', style: TextStyle(
+                                    const Text(
+                                      '75 %', style: TextStyle(
                                         fontSize: 28,
                                         fontFamily: 'good', color: Colors.white, fontWeight: FontWeight.bold),),
                                     const SizedBox(
                                       height: 10,
                                     ),
                                     Text('Brightness', style: TextStyle(
-                                        fontSize: 18,
+                                        fontSize: 14,
                                         fontFamily: 'good', color: Colors.white.withOpacity(0.6),
                                         fontWeight: FontWeight.bold),),
                                   ],
@@ -146,7 +166,7 @@ class MainPage extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 10,),
                                     Text('SCHEDULE', style: TextStyle(
-                                        fontSize: 16,
+                                        fontSize: 14,
                                         fontFamily: 'good', color: Colors.white.withOpacity(0.6),
                                         fontWeight: FontWeight.bold),)
                                   ],
@@ -194,6 +214,13 @@ class MainPage extends StatelessWidget {
                     ),
                   ),
 
+                  Positioned.fill(
+                    bottom: 140,
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: CircleBox()
+                    ),
+                  )
                 ],
               ),
             ),
