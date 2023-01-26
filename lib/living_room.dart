@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
 import 'package:smart_home/gradient_text.dart';
+import 'package:smart_home/switch_box.dart';
 
 import 'main_page.dart';
 
@@ -25,7 +26,7 @@ class LivingRoomPage extends StatelessWidget {
                 ),
               ),
               Container(
-                color: kLightBlack,
+                color: kBlack,
                 width: size.width * 0.15,
                 height: size.height * 0.5,
                 padding: const EdgeInsets.fromLTRB(0, 50, 0, 90),
@@ -63,9 +64,9 @@ class LivingRoomPage extends StatelessWidget {
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
                           colors: [
-                            kLightBlack.withOpacity(0.2),
-                            kLightBlack,
-                            kLightBlack,
+                            kBlack.withOpacity(0.2),
+                            kBlack,
+                            kBlack,
                           ],
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
@@ -119,8 +120,34 @@ class LivingRoomPage extends StatelessWidget {
           Container(
             width: size.width,
             height: size.height * 0.25,
-            color: kLightBlack,
-          )
+            color: kBlack,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Column(
+                  children: [
+                    SwitchBox(color: kBlue, icon: 'tv',),
+                    const SizedBox(height: 15,),
+                    const Text('TV', style: TextStyle(fontFamily: 'good', color: Colors.white),),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SwitchBox(color: kRed, icon: 'bulb',),
+                    const SizedBox(height: 15,),
+                    const Text('Light', style: TextStyle(fontFamily: 'good', color: Colors.white),),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SwitchBox(color: kPurple, icon: 'wifi',),
+                    const SizedBox(height: 15,),
+                    const Text('Wi-Fi', style: TextStyle(fontFamily: 'good', color: Colors.white),),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
