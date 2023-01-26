@@ -3,6 +3,7 @@ import 'package:smart_home/circle_box.dart';
 import 'package:smart_home/constants.dart';
 import 'package:smart_home/gradient_text.dart';
 
+import 'living_room.dart';
 import 'main_page_box.dart';
 
 class MainPage extends StatefulWidget {
@@ -16,16 +17,6 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
 
-  double value1 = 0;
-
-  String percentageModifier(double value) {
-    final roundedValue = value.ceil().toInt().toString();
-    print('$roundedValue %');
-    setState(() {
-      value1 = double.parse(roundedValue);
-    });
-    return '$roundedValue %';
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +110,11 @@ class _MainPageState extends State<MainPage> {
                                   SizedBox(
                                     width: 30,
                                     height: 30,
-                                    child: Image.asset('assets/icons/menu.png'),
+                                    child: GestureDetector(
+                                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                      const LivingRoomPage())),
+                                        child: Image.asset('assets/icons/menu.png')),
                                   ),
                                 ],
                               ),
