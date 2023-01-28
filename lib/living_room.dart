@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_home/constants.dart';
 import 'package:smart_home/gradient_text.dart';
 import 'package:smart_home/switch_box.dart';
-
+import 'package:smart_home/temperature_box.dart';
 import 'main_page.dart';
 
 class LivingRoomPage extends StatelessWidget {
@@ -29,7 +29,7 @@ class LivingRoomPage extends StatelessWidget {
                 color: kBlack,
                 width: size.width * 0.15,
                 height: size.height * 0.5,
-                padding: const EdgeInsets.fromLTRB(0, 50, 0, 90),
+                padding: const EdgeInsets.fromLTRB(0, 40, 0, 90),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -37,20 +37,19 @@ class LivingRoomPage extends StatelessWidget {
                       width: 25,
                       height: 25,
                       child: GestureDetector(
-                          onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  MainPage())),
+                          onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      MainPage())),
                           child: Image.asset('assets/icons/back.png')),
                     ),
                     const RotatedBox(
                       quarterTurns: 1,
-                      child: GradientText('Living Room', gradient: LinearGradient(
-                          colors: [
-                            kBlue,
-                            kRed
-                          ]
-                      ),
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                      child: GradientText(
+                        'Living Room',
+                        gradient: LinearGradient(colors: [kBlue, kRed]),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 34),
                       ),
                     ),
                   ],
@@ -96,11 +95,10 @@ class LivingRoomPage extends StatelessWidget {
                             gradient: LinearGradient(colors: [
                               Colors.white,
                               Colors.white.withOpacity(0.5),
-                            ],
-                              stops: const [
-                                0.8, 0.9
-                              ]
-                            ),
+                            ], stops: const [
+                              0.8,
+                              0.9
+                            ]),
                             style: const TextStyle(fontFamily: 'good'),
                           ),
                         ],
@@ -119,35 +117,65 @@ class LivingRoomPage extends StatelessWidget {
           ),
           Container(
             width: size.width,
-            height: size.height * 0.25,
+            height: size.height * 0.24,
             color: kBlack,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
                   children: [
-                    SwitchBox(color: kBlue, icon: 'tv',),
-                    const SizedBox(height: 15,),
-                    const Text('TV', style: TextStyle(fontFamily: 'good', color: Colors.white),),
+                    SwitchBox(
+                      color: kBlue,
+                      icon: 'tv',
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      'TV',
+                      style: TextStyle(fontFamily: 'good', color: Colors.white),
+                    ),
                   ],
                 ),
                 Column(
                   children: [
-                    SwitchBox(color: kRed, icon: 'bulb',),
-                    const SizedBox(height: 15,),
-                    const Text('Light', style: TextStyle(fontFamily: 'good', color: Colors.white),),
+                    SwitchBox(
+                      color: kRed,
+                      icon: 'bulb',
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      'Light',
+                      style: TextStyle(fontFamily: 'good', color: Colors.white),
+                    ),
                   ],
                 ),
                 Column(
                   children: [
-                    SwitchBox(color: kPurple, icon: 'wifi',),
-                    const SizedBox(height: 15,),
-                    const Text('Wi-Fi', style: TextStyle(fontFamily: 'good', color: Colors.white),),
+                    SwitchBox(
+                      color: kPurple,
+                      icon: 'wifi',
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      'Wi-Fi',
+                      style: TextStyle(fontFamily: 'good', color: Colors.white),
+                    ),
                   ],
                 ),
               ],
             ),
           ),
+          Container(
+            width: size.width,
+            height: size.height * 0.26,
+            color: kBlack,
+            child: TemperatureBox(),
+          )
         ],
       ),
     );

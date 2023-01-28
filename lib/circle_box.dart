@@ -84,7 +84,10 @@ class CircleBoxState extends State<CircleBox> {
                 handlerSize: 13,
                 ),
                 infoProperties: InfoProperties(
-                    mainLabelStyle: const TextStyle(color: Colors.transparent, fontWeight: FontWeight.bold, fontSize: 24)
+                    mainLabelStyle: const TextStyle(
+                        color: Colors.transparent,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24)
                 ),
               customColors: CustomSliderColors(
                 dotColor: Colors.white,
