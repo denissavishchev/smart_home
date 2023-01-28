@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/living_room.dart';
+import 'package:smart_home/main_page.dart';
 
 
 void main() {
@@ -11,9 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-        home: LivingRoomPage());
+        home: MainPage());
   }
 }
 
