@@ -1,16 +1,6 @@
 # smart_home
 
-A new Flutter project.
+https://user-images.githubusercontent.com/77541683/215313582-3cef0051-249b-47a8-8a42-d422ae890484.mp4
 
-## Getting Started
+![smarthome1](https://user-images.githubusercontent.com/77541683/215313645-d8ce3923-445d-41de-bc73-fd1651ac893e.png)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
